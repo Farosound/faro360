@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faro · a school of inner knowing · Leuven, Belgium and online</title>
+<meta name="description" content="Faro is a school of inner knowing. Journeys into the inner worlds through voice, imagination and trance, with Ariana Ramos in Leuven and online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Archivo:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #160D1F;
+    --plum: #21142D;
+    --plum-2: #2C1B3B;
+    --violet: #4A2E66;
+    --lavender: #B9A3D6;
+    --mist: #E9E1F1;
+    --text: #EDE6F2;
+    --muted: #B8ABC4;
+    --lamp: #E7C27D;
+    --lamp-soft: rgba(231, 194, 125, 0.14);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text);
+    background: var(--night);
+    overflow-x: hidden;
+  }
+  a { color: var(--lamp); }
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+  }
+  h2 { font-size: clamp(2.1rem, 5vw, 3.4rem); color: var(--mist); margin-bottom: 1.5rem; }
+  h3 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--lavender); margin-bottom: 1rem; }
+  .eyebrow {
+    font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--lamp); margin-bottom: 1rem; display: block;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  section { padding: 6rem 0; position: relative; }
+  .alt { background: var(--plum); }
+  .lead { font-size: 1.15rem; color: var(--muted); max-width: 720px; }
+
+  /* Hero */
+  .hero {
+    min-height: 95vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 5rem 1.5rem; position: relative; overflow: hidden;
+    background: radial-gradient(ellipse at 50% 30%, var(--violet) 0%, var(--plum) 45%, var(--night) 100%);
+  }
+  .beam {
+    position: absolute; top: 18%; left: 50%; width: 160vw; height: 220px;
+    transform-origin: 0 50%;
+    background: linear-gradient(90deg, rgba(231,194,125,0.22), rgba(231,194,125,0) 70%);
+    filter: blur(18px);
+    animation: sweep 14s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 820px; }
+  .hero-image {
+    width: 220px; height: 220px; border-radius: 50%; margin: 0 auto 2.5rem; overflow: hidden;
+    border: 2px solid var(--lamp);
+    box-shadow: 0 0 60px rgba(231,194,125,0.25), 0 0 0 10px rgba(185,163,214,0.08);
+  }
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+  .hero h1 { font-size: clamp(3.5rem, 10vw, 7rem); color: var(--mist); margin-bottom: 0.5rem; letter-spacing: 0.08em; }
+  .hero .school { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.4rem, 3vw, 2rem); color: var(--lamp); margin-bottom: 1.5rem; }
+  .hero .tagline { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); margin-bottom: 2.5rem; }
+
+  .btn {
+    display: inline-block; padding: 0.9rem 2rem; margin: 0.4rem;
+    border: 1px solid var(--lamp); color: var(--night); background: var(--lamp);
+    text-decoration: none; letter-spacing: 0.06em; font-weight: 400; font-size: 0.98rem;
+    transition: all 0.3s ease;
+  }
+  .btn:hover { background: transparent; color: var(--lamp); }
+  .btn.ghost { background: transparent; color: var(--lamp); }
+  .btn.ghost:hover { background: var(--lamp); color: var(--night); }
+
+  /* Evening */
+  .event {
+    display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: start; margin-top: 2rem;
+  }
+  .card {
+    background: var(--plum-2); border: 1px solid rgba(185,163,214,0.15);
+    padding: 2.2rem; border-radius: 6px;
+  }
+  .card.lamp { border-color: rgba(231,194,125,0.45); box-shadow: 0 0 40px var(--lamp-soft); }
+  .facts { list-style: none; }
+  .facts li { padding: 0.45rem 0; border-bottom: 1px solid rgba(185,163,214,0.1); }
+  .facts li:last-child { border-bottom: none; }
+  .facts strong { color: var(--lamp); font-weight: 400; display: inline-block; min-width: 6.5rem; }
+  p + p { margin-top: 1.1rem; }
+
+  /* Path */
+  .path {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 2.5rem 0 1rem;
+  }
+  .path .card h4 { font-size: 1.6rem; color: var(--mist); margin-bottom: 0.4rem; }
+  .path .card .part { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lavender); }
+  .diamond { list-style: none; margin: 1rem 0; }
+  .diamond li { padding: 0.35rem 0 0.35rem 1.6rem; position: relative; }
+  .diamond li::before { content: '◆'; position: absolute; left: 0; color: var(--lamp); font-size: 0.75rem; top: 0.6rem; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
+
+  .price-table { width: 100%; border-collapse: collapse; margin: 1rem 0 0.5rem; }
+  .price-table td { padding: 0.7rem 0; border-bottom: 1px solid rgba(185,163,214,0.12); vertical-align: top; }
+  .price-table td:last-child { text-align: right; color: var(--lamp); white-space: nowrap; padding-left: 1rem; }
+  .small { font-size: 0.92rem; color: var(--muted); }
+
+  .note {
+    margin-top: 2rem; padding: 1.4rem 1.6rem; border-left: 3px solid var(--lamp);
+    background: rgba(231,194,125,0.06); font-size: 0.98rem;
+  }
+
+  /* Slots */
+  .slots { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.8rem; margin-top: 1.5rem; }
+  .slot { background: var(--plum-2); border: 1px solid rgba(185,163,214,0.15); padding: 0.9rem 1rem; border-radius: 4px; text-align: center; }
+  .slot b { display: block; color: var(--mist); font-weight: 400; }
+  .slot span { font-size: 0.9rem; color: var(--muted); }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 1fr 1.8fr; gap: 3.5rem; align-items: start; }
+  .about img { width: 100%; border-radius: 6px; box-shadow: 0 20px 60px rgba(0,0,0,0.45); }
+  .about p { color: var(--text); }
+
+  /* Testimonials */
+  .t-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+  .t-card { background: var(--plum-2); padding: 2rem; border-top: 2px solid var(--lavender); border-radius: 4px; font-style: italic; }
+  .t-card .who { font-style: normal; color: var(--lamp); margin-top: 1rem; font-size: 0.95rem; }
+  .photos { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 260px 260px; gap: 1.2rem; margin-top: 2.5rem; }
+  .photos img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+  .photos .big { grid-row: span 2; }
+  .wide-img { width: 100%; margin-top: 1.8rem; border-radius: 6px; box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+  .journey-top { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2.5rem; align-items: center; }
+  .journey-top img { width: 100%; border-radius: 6px; box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+  .proof { text-align: center; color: var(--muted); margin-top: 1rem; }
+
+  /* Contact */
+  .contact { text-align: center; background: radial-gradient(ellipse at 50% 100%, var(--violet) 0%, var(--night) 70%); }
+  form { max-width: 600px; margin: 2.5rem auto 0; text-align: left; }
+  label { display: block; margin-bottom: 0.4rem; color: var(--mist); }
+  input, select, textarea {
+    width: 100%; padding: 0.9rem 1rem; margin-bottom: 1.3rem;
+    background: var(--plum); color: var(--text); border: 1px solid rgba(185,163,214,0.3);
+    font-family: 'Archivo', sans-serif; font-size: 1rem; border-radius: 3px;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--lamp); }
+  textarea { min-height: 140px; resize: vertical; }
+  button.btn { cursor: pointer; font-family: 'Archivo', sans-serif; }
+
+  footer { text-align: center; padding: 2.5rem 1.5rem; color: var(--muted); font-size: 0.9rem; background: #0F0816; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.active { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .beam { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+  @media (max-width: 800px) {
+    .event, .two, .about, .journey-top { grid-template-columns: 1fr; }
+    .photos { grid-template-columns: 1fr; grid-template-rows: none; }
+    .photos img { height: 260px; } .photos .big { grid-row: auto; height: 320px; }
+    section { padding: 4.5rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="beam" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-image"><img src="img/ari-singing-garden.jpg" alt="Ariana singing in the garden" style="object-position:50% 30%"></div>
+    <h1>FARO</h1>
+    <p class="school">a school of inner knowing</p>
+    <p class="tagline">Journeys into the inner worlds through voice, imagination and trance.<br>With Ariana Ramos, in Leuven, Belgium, and online.</p>
+    <a class="btn" href="#evening">Workshop in Leuven · 7 December</a>
+    <a class="btn ghost" href="#course">The 12-week path</a>
+  </div>
+</header>
+
+<!-- Evening -->
+<section id="evening">
+  <div class="wrap">
+    <span class="eyebrow reveal">Workshop · Leuven · Monday 7 December</span>
+    <h2 class="reveal">Voice and the Inner Journey</h2>
+    <p class="lead reveal">An evening of intuitive singing and a guided inner journey, in Leuven on 7 December, one last time before I leave for the holidays.</p>
+    <div class="event">
+      <div class="reveal">
+        <p>We start by singing intuitively together. No experience needed and no "good voice" needed. We go from talking to sounding, until the voice becomes a resonant instrument of breath, bone and the space around us.</p>
+        <p>Then we use the voice to travel inward: a guided journey, lying down with eyes closed, letting the sound carry you somewhere inside. It's gentle, and if your body only wants to rest, that's fine too.</p>
+        <p>This evening is also the first door of Faro, the school I'm opening. Come and feel whether this way of working is for you.</p>
+        <img class="wide-img" src="img/workshop-red.jpg" alt="A singing circle guided by Ariana">
+      </div>
+      <div class="card lamp reveal">
+        <ul class="facts">
+          <li><strong>When</strong> Monday 7 December 2026, 19:00 to 21:00</li>
+          <li><strong>Where</strong> Huis van Aaron, Leuven</li>
+          <li><strong>Price</strong> €15 · students €10</li>
+          <li><strong>Group</strong> max 15 people</li>
+          <li><strong>Bring</strong> comfy clothes, a blanket if you like</li>
+          <li><strong>Language</strong> English</li>
+        </ul>
+        <a class="btn" href="#contact" style="margin-top:1.5rem">Reserve a spot</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Course -->
+<section id="course" class="alt">
+  <div class="wrap">
+    <span class="eyebrow reveal">The Path of Inner Knowing · Part One</span>
+    <h2 class="reveal">A 12-week path of inner knowing<br><em style="color:var(--lamp)">Dreaming the Land Within</em></h2>
+    <p class="lead reveal">Twelve weeks to map your inner land: your past and present, your emotional home, your inner allies, and your first journeys between waking and dreaming.</p>
+
+    <div class="two">
+      <div class="reveal">
+        <h3>What we explore</h3>
+        <ul class="diamond">
+          <li>A map of your life: past, present, and the heart running through it</li>
+          <li>Feeling the energy in your own body and noticing what moves it through the day</li>
+          <li>Bringing order to your home and to unfinished business</li>
+          <li>The maps of the inner worlds that traditions around the world have drawn</li>
+          <li>Building an emotional home you can return to</li>
+          <li>Meeting your inner allies through guided imagination: an animal, your guardians, your ancestors, the elements</li>
+          <li>Your voice as a vehicle</li>
+          <li>First light journeys in the space between waking and sleep</li>
+          <li>Small daily offerings that lead you to wholesome states</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <h3>How it works</h3>
+        <ul class="diamond">
+          <li>Start whenever you're ready. A new part of the path opens each week.</li>
+          <li>Practical exercises to do in your everyday life, plus recorded guided journeys</li>
+          <li>A personal welcome call, in person in Leuven or online, where I offer you a song</li>
+          <li>Personal guidance by chat throughout the twelve weeks</li>
+          <li>For the founding travellers: a personal one-minute song made for you</li>
+        </ul>
+        <p class="small">I guide you, but you walk your own process. Any win is your win. I'm a witness on your path, and honoured to be one.</p>
+      </div>
+    </div>
+
+    <div class="two">
+      <div class="card lamp reveal">
+        <h3>Investment</h3>
+        <table class="price-table">
+          <tr><td>Founding price, for those who enrol before 12 December</td><td>€690</td></tr>
+          <tr><td>Standard price</td><td>€990</td></tr>
+          <tr><td>Or in three monthly payments</td><td>3 × €330</td></tr>
+        </table>
+        <p class="small">A real traveller shouldn't be left out because of money. Each season I keep a few places on donation, starting at €200, with special care for students, pensioners and people without work. Write to me and tell me a little about your situation. No proof needed.</p>
+        <a class="btn" href="#contact" style="margin-top:1.3rem">I'd like to start</a>
+      </div>
+      <div class="card reveal">
+        <h3>The whole path</h3>
+        <p><b style="color:var(--mist);font-weight:400">Part One, Dreaming the Land Within</b>, builds the ground: your map, your home, your allies, your vehicle.</p>
+        <p><b style="color:var(--mist);font-weight:400">Part Two</b> goes deeper: trance, and travelling the inner worlds beyond the land within. It opens to those who complete Part One, at the same price. I'm telling you now so nothing comes as a surprise later. Part One is complete in itself, and you're free to stop there.</p>
+        <p class="small">In-person weekends with other students will be offered now and then. They're optional, from €250 for the teaching. Food and lodging not included.</p>
+      </div>
+    </div>
+
+    <div class="note reveal">This is a path of practice, not therapy. If you are going through a crisis or are under psychiatric care, please talk to me before you start, and keep your own professional support close.</div>
+  </div>
+</section>
+
+<!-- Journeys -->
+<section id="journeys">
+  <div class="wrap">
+    <span class="eyebrow reveal">One to one</span>
+    <h2 class="reveal">Faro Journeys</h2>
+    <div class="journey-top"><img class="reveal" src="img/ari-kneeling.jpg" alt="Ariana in her teaching space"><p class="lead reveal">A single one-hour session: we talk a little, then I guide you on a journey with voice and imagination, shaped around what you bring. In my flat in Leuven or online. A journey costs €80 for one hour. If you enrol in <em>Dreaming the Land Within</em> within a month, the €80 comes off the course price.</p></div>
+    <p class="reveal" style="margin-top:1.5rem;color:var(--mist)">Open afternoons before I leave for the holidays:</p>
+    <div class="slots reveal">
+      <div class="slot"><b>Thu 19 Nov</b><span>13:30 · 15:30</span></div>
+      <div class="slot"><b>Mon 23 Nov</b><span>13:30 · 15:15</span></div>
+      <div class="slot"><b>Wed 25 Nov</b><span>13:30</span></div>
+      <div class="slot"><b>Tue 1 Dec</b><span>13:30 · 15:30</span></div>
+      <div class="slot"><b>Wed 2 Dec</b><span>13:30 · 15:30</span></div>
+      <div class="slot"><b>Thu 3 Dec</b><span>13:30 · 15:30</span></div>
+      <div class="slot"><b>Wed 9 Dec</b><span>13:30 · 15:30</span></div>
+      <div class="slot"><b>Thu 10 Dec</b><span>13:30 · 15:30</span></div>
+    </div>
+    <a class="btn reveal" href="#contact" style="margin-top:1.5rem">Book a journey</a><!-- replace #contact with your Google Calendar booking-page link -->
+    <p class="small reveal" style="margin-top:1rem">Or write to me with the slot you'd like. From mid-December to mid-February sessions continue online.</p>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="alt">
+  <div class="wrap">
+    <span class="eyebrow reveal">Who's guiding</span>
+    <h2 class="reveal">The Journey</h2>
+    <div class="about">
+      <img class="reveal" src="img/ari-singing-garden.jpg" alt="Ariana singing in a garden">
+      <div class="reveal">
+        <p>When I was a child, I spent hours singing to trees, birds, ants and rocks. It was the most natural thing in the world. Then I got schooled out of it. I couldn't memorize songs or sing the same thing twice, so I thought I couldn't sing. I forgot. I "grew up."</p>
+        <p>Years later I learned from shamans, scientists and meditators how to work with different states of consciousness. I found my way into trance, that space between waking and sleeping, and there my long-lost songs returned.</p>
+        <p>My path mixes Latin American and Siberian shamanic training, Boabom, and long silent meditation retreats in the Pa Auk tradition. By day I'm a data scientist and researcher. I study minds from the outside, and in this work I explore them from the inside.</p>
+        <p>Faro means lighthouse: well anchored, with a light that shines from within and reaches out across the dark to those who are looking for it. That's what I wish for everyone who walks this road.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="voices">
+  <div class="wrap">
+    <span class="eyebrow reveal">From the singing circles</span>
+    <h2 class="reveal">Voices</h2>
+    <div class="t-grid">
+      <div class="t-card reveal">The workshop helped me to discover a totally unknown part of myself. It helped me to express myself without judgment. I learned that singing is another type of communication, expression and connection with myself and with others, and that there is no need to sing nicely or have technical skills to feel music and be creative.<div class="who">Giannina</div></div>
+      <div class="t-card reveal">This workshop offered me a beautiful opportunity to explore a deep artistic experience in a safe environment. Singing full of freedom and connection.<div class="who">Maritza</div></div>
+      <div class="t-card reveal">This intuitive singing afternoon opened me to explore my voice and its sound to a degree I didn't remember or I didn't know. It brought warmth and inner joy and connection. This was all made possible through the warm, inviting and fluent guidance of Ariana and through an open and curious group. Grateful.<div class="who">Tine</div></div>
+    </div>
+    <div class="photos reveal">
+      <img class="big" src="img/workshop-facing.jpg" alt="Face to face in an intuitive singing workshop">
+      <img src="img/workshop-blurred.jpg" alt="Intuitive singing workshop, Leuven">
+      <img src="img/boabom-ozora.jpg" alt="Boabom movement workshop at Ozora Festival">
+    </div>
+    <p class="proof reveal">Intuitive singing workshops in Belgium since 2025 · Movement workshops at Ozora Festival (3×)</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Write to me</h2>
+    <p class="lead" style="margin:0 auto">For the evening, the course, a journey, or just a question.</p>
+    <form action="https://formspree.io/f/mjgkboov" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="about">I'm writing about</label>
+      <select id="about" name="about">
+        <option>The evening on 7 December</option>
+        <option>Dreaming the Land Within</option>
+        <option>A one-to-one Faro Journey</option>
+        <option>A place on donation</option>
+        <option>Something else</option>
+      </select>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="For a journey, tell me which slot you'd like." required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+    <p style="margin-top:2rem"><a href="mailto:isagut35@gmail.com">isagut35@gmail.com</a></p>
+    <p class="small" style="margin-top:1rem"><a href="https://www.youtube.com/@farosound" target="_blank" rel="noopener">Faro on YouTube</a> · <a href="https://soundcloud.com/laguara" target="_blank" rel="noopener">SoundCloud</a></p>
+  </div>
+</section>
+
+<footer>© 2026 Faro · Ariana Ramos · Leuven</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => io.observe(r));
+</script>
+</body>
+</html>
