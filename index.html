@@ -192,6 +192,9 @@
   .slot { background: var(--plum-2); border: 1px solid rgba(185,163,214,0.15); padding: 0.9rem 1rem; border-radius: 4px; text-align: center; }
   .slot b { display: block; color: var(--mist); font-weight: 400; }
   .slot span { font-size: 0.9rem; color: var(--muted); }
+  .slot.taken { opacity: 0.55; }
+  .slot.taken span s { color: var(--muted); }
+  .slot .tag { display: block; margin-top: 0.25rem; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 
   /* About */
   .about { display: grid; grid-template-columns: 1fr 1.8fr; gap: 3.5rem; align-items: start; }
@@ -376,7 +379,7 @@
       <div class="slot"><b>Thu 19 Nov</b><span>13:30 · 15:30</span></div>
       <div class="slot"><b>Mon 23 Nov</b><span>13:30 · 15:15</span></div>
       <div class="slot"><b>Wed 25 Nov</b><span>13:30</span></div>
-      <div class="slot"><b>Tue 1 Dec</b><span>13:30 · 15:30</span></div>
+      <div class="slot taken"><b>Tue 1 Dec</b><span><s>13:30 · 15:30</s></span><span class="tag">Taken</span></div>
       <div class="slot"><b>Wed 2 Dec</b><span>13:30 · 15:30</span></div>
       <div class="slot"><b>Thu 3 Dec</b><span>13:30 · 15:30</span></div>
       <div class="slot"><b>Wed 9 Dec</b><span>13:30 · 15:30</span></div>
